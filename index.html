@@ -1,0 +1,31 @@
+<script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>
+<script>
+  //https://nbriz.github.io/cool-site?ex=1
+  //https --> protocol
+  //nbriz --> sub domain (username)
+  //github.io --> domain name/hostname
+  //.io -->can try legal domain
+  //cool-site -->path
+  //?ex=1 or #... --> URL parameters, query param (search, can delete)
+  //to see code on net net
+  //https://netnet.studio?gh=username<nbriz>/projectname<cool-site>
+  
+/* global nn */
+function setup () {
+  const slider = nn.create('input') //creates slider, store in variable
+  .set( {
+    type: 'range',
+    //choose min for slider
+    min: -100,
+    max: 0,
+    step: 0.05 //how much to increment or decrement by?
+  })
+  .addTo('body') //add to overall body
+  //.on('click', (e) => { //we are defining a function object called 'e'
+  .on('change', () => {
+    console.log(slider.value) //review this!!! is .value built in?
+  })
+}
+  
+  nn.on('load', setup)
+</script>
